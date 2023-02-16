@@ -26,4 +26,6 @@ spec:
     - team: pensjonopptjening
       application: omsorgsopptjening-bestem-pensjonsopptjening
       access: write
-     
+    - team: pensjonopptjening
+      application: omsorgsopptjening-lagre-popp
+      access: read
