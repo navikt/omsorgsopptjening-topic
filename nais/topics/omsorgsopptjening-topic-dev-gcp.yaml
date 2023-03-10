@@ -21,6 +21,12 @@ spec:
       application: omsorgsopptjening-konsument-omsorgsarbeid
       access: write
     - team: pensjonopptjening
+      application: omsorgsopptjening-retry
+      access: write
+    - team: pensjonopptjening
+      application: omsorgsopptjening-retry
+      access: read
+    - team: pensjonopptjening
       application: omsorgsopptjening-bestem-pensjonsopptjening
       access: read
     - team: pensjonopptjening
