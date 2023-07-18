@@ -18,6 +18,9 @@ spec:
     retentionHours: -1  # -1 means unlimited
   acl:
     - team: pensjonopptjening
+      application: omsorgsopptjening-start-innlesning
+      access: write
+    - team: pensjonopptjening
       application: omsorgsopptjening-konsument-omsorgsarbeid
       access: write
     - team: pensjonopptjening
