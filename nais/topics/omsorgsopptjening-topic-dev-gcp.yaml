@@ -21,23 +21,5 @@ spec:
       application: omsorgsopptjening-start-innlesning
       access: write
     - team: pensjonopptjening
-      application: omsorgsopptjening-konsument-omsorgsarbeid
-      access: read
-    - team: pensjonopptjening
-      application: omsorgsopptjening-konsument-omsorgsarbeid
-      access: write
-    - team: pensjonopptjening
-      application: omsorgsopptjening-retry
-      access: write
-    - team: pensjonopptjening
-      application: omsorgsopptjening-retry
-      access: read
-    - team: pensjonopptjening
       application: omsorgsopptjening-bestem-pensjonsopptjening
-      access: read
-    - team: pensjonopptjening
-      application: omsorgsopptjening-bestem-pensjonsopptjening
-      access: write
-    - team: pensjonopptjening
-      application: omsorgsopptjening-lagre-popp
       access: read
