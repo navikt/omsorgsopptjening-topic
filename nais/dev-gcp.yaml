@@ -9,7 +9,9 @@ metadata:
     kafka.nais.io/removeDataWhenResourceIsDeleted: "true"
 spec:
   pool: nav-dev
-  #config: use default values https://docs.nais.io/persistence/kafka/manage_topics/
+  config:
+    #use default values https://docs.nais.io/persistence/kafka/manage_topics/
+    partitions: 6 #initially created with 6 partitions, reducing partitions not supported.
   acl:
     - team: pensjonopptjening
       application: omsorgsopptjening-start-innlesning
