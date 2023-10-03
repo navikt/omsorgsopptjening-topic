@@ -1,0 +1,22 @@
+name: Deploy omsorgsopptjening-topic to prod-gcp
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'nais/prod-gcp.yaml'
+jobs:
+  deploy:
+    name: 'Deploy omsorgsopptjening-topic to prod-gcp'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout code'
+        uses: actions/checkout@v2
+
+      - name: 'Deploy resources to prod-gcp'
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: prod-gcp
+          RESOURCE: nais/prod-gcp.yaml

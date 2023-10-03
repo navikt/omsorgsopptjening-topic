@@ -1,0 +1,19 @@
+apiVersion: kafka.nais.io/v1
+kind: Topic
+metadata:
+  name: omsorgsopptjening
+  namespace: pensjonopptjening
+  labels:
+    team: pensjonopptjening
+  annotations:
+    kafka.nais.io/removeDataWhenResourceIsDeleted: "true"
+spec:
+  pool: nav-dev
+  #config: use default values https://docs.nais.io/persistence/kafka/manage_topics/
+  acl:
+    - team: pensjonopptjening
+      application: omsorgsopptjening-start-innlesning
+      access: write
+    - team: pensjonopptjening
+      application: omsorgsopptjening-bestem-pensjonsopptjening
+      access: read

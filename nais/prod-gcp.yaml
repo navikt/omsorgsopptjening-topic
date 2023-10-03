@@ -5,17 +5,16 @@ metadata:
   namespace: pensjonopptjening
   labels:
     team: pensjonopptjening
-  annotations:
-    kafka.nais.io/removeDataWhenResourceIsDeleted: "true"
 spec:
-  pool: nav-dev
+  pool: nav-prod
   config:
-    cleanupPolicy: delete # Kafka will discard old segments when retention time or size limit has been reached
-    minimumInSyncReplicas: 1
-    partitions: 6
+    cleanupPolicy: delete
+    minimumInSyncReplicas: 2
+    partitions: 2
     replication: 3
-    retentionBytes: -1 # Messages will never get deleted because of disk space
-    retentionHours: -1  # -1 means unlimited
+    retentionBytes: -1
+    retentionHours: 672
+    segmentHours: 672
   acl:
     - team: pensjonopptjening
       application: omsorgsopptjening-start-innlesning

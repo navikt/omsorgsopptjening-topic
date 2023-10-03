@@ -1,0 +1,22 @@
+name: Deploy omsorgsopptjening-topic to dev-gcp
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'nais/dev-gcp.yaml'
+jobs:
+  deploy:
+    name: 'Deploy omsorgsopptjening-topic to dev-gcp'
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout code'
+        uses: actions/checkout@v2
+
+      - name: 'Deploy resources to dev-gcp'
+        uses: nais/deploy/actions/deploy@v1
+        env:
+          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+          CLUSTER: dev-gcp
+          RESOURCE: nais/dev-gcp.yaml
