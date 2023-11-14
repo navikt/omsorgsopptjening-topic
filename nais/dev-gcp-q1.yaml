@@ -1,0 +1,21 @@
+apiVersion: kafka.nais.io/v1
+kind: Topic
+metadata:
+  name: omsorgsopptjening-q1
+  namespace: pensjonopptjening
+  labels:
+    team: pensjonopptjening
+  annotations:
+    kafka.nais.io/removeDataWhenResourceIsDeleted: "true"
+spec:
+  pool: nav-dev
+  config:
+    #use default values https://docs.nais.io/persistence/kafka/manage_topics/
+    partitions: 6 #initially created with 6 partitions, reducing partitions not supported.
+  acl:
+    - team: pensjonopptjening
+      application: omsorgsopptjening-start-innlesning-q1
+      access: write
+    - team: pensjonopptjening
+      application: omsorgsopptjening-bestem-pensjonsopptjening-q1
+      access: read

@@ -6,6 +6,7 @@ on:
       - main
     paths:
       - 'nais/dev-gcp.yaml'
+      - 'nais/dev-gcp-q1.yaml'
 jobs:
   deploy:
     name: 'Deploy omsorgsopptjening-topic to dev-gcp'
@@ -19,4 +20,4 @@ jobs:
         env:
           APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
-          RESOURCE: nais/dev-gcp.yaml
+          RESOURCE: nais/dev-gcp.yaml,nais/dev-gcp-q1.yaml
