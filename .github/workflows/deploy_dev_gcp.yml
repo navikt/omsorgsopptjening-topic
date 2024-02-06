@@ -16,8 +16,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: 'Deploy resources to dev-gcp'
-        uses: nais/deploy/actions/deploy@v1
+        uses: nais/deploy/actions/deploy@v2
         env:
-          APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
           CLUSTER: dev-gcp
           RESOURCE: nais/dev-gcp.yaml,nais/dev-gcp-q1.yaml
