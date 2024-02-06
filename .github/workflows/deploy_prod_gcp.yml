@@ -1,6 +1,7 @@
 name: Deploy omsorgsopptjening-topic to prod-gcp
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
